@@ -1,0 +1,13 @@
+{
+ "type": "postgres",
+  "host": "localhost",
+  "port": 5432,
+  "username": "database",
+  "password": "user",
+  "database": "rentx",
+  "entities": ["./src/modules/accounts/infra/typeorm/entities/*.ts", "./src/modules/cars/infra/typeorm/entities/*.ts"],
+  "migrations": ["./src/shared/infra/typeorm/migrations/*.ts"],
+  "cli": {
+    "migrationsDir": "./src/shared/infra/typeorm/migrations"
+  }
+}
