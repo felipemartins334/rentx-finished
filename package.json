@@ -13,6 +13,7 @@
     "@types/bcrypt": "^5.0.0",
     "bcrypt": "^5.0.1",
     "csv-parse": "^5.0.4",
+    "dayjs": "^1.10.7",
     "express": "^4.17.2",
     "express-async-errors": "^3.1.1",
     "jest": "^27.4.7",
@@ -38,6 +39,7 @@
   "scripts": {
     "test": "jest",
     "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts",
-    "typeorm": "ts-node-dev ./node_modules/typeorm/cli"
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli",
+    "seed:admin": "ts-node-dev src/shared/infra/typeorm/seed/admin.ts"
   }
 }
