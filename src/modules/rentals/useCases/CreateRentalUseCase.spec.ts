@@ -1,4 +1,6 @@
 import dayjs from 'dayjs'
+import { IDateProvider } from '../../../shared/container/providers/DateProvider/IDateProvider'
+import { DayJsDateProvider } from '../../../shared/container/providers/DateProvider/implementations/DayjsDateProvider'
 import { AppError } from "../../../shared/errors/AppError"
 import { RentalsRepositoryInMemory } from "../repositories/in-memory/RentalsRepositoryInMemory"
 import { IRentalsRepository } from "../repositories/IRentalsRepository"
@@ -6,14 +8,19 @@ import { CreateRentalUseCase } from "./CreateRentalUseCase"
 
 let createRentalUseCase: CreateRentalUseCase
 let rentalsRepositoryInMemory: IRentalsRepository
+let dayJsProvider: IDateProvider
 
 describe("Create Rental", () => {
 
   const dayAdd24Hours = dayjs().add(1, "day").toDate()
    
   beforeEach( () => {
+    dayJsProvider = new DayJsDateProvider()
     rentalsRepositoryInMemory = new RentalsRepositoryInMemory()
-    createRentalUseCase = new CreateRentalUseCase(rentalsRepositoryInMemory)
+    createRentalUseCase = new CreateRentalUseCase(
+      rentalsRepositoryInMemory,
+      dayJsProvider
+      )
   })
 
   it("should be able to create a new rental", async () => {
