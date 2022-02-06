@@ -1,4 +1,4 @@
-version: "3.7"
+version: "3.9"
 services:
   app:
     build: .
@@ -7,7 +7,6 @@ services:
       - 3333:3333
     volumes:
       - .:/usr/app
-    network_mode: host
   database_ignite:
     image: postgres
     container_name: database_ignite
@@ -20,7 +19,6 @@ services:
       - POSTGRES_DB=rentx
     volumes:
       - pgdata:/data/postgres
-    network_mode: host
 volumes:
   pgdata:
     driver: local

@@ -12,7 +12,7 @@ const carsRoutes = Router()
 
 const createCarController = new CreateCarController()
 const listAvailableCarsController = new ListAvailableCarsController()
-const createCarSpecificationControler = new CreateCarSpecificationController()
+const createCarSpecificationController = new CreateCarSpecificationController()
 const uploadCarImageController = new UploadCarImageController()
 
 const uploadImage = multer(upload.upload("./tmp/cars"))
@@ -23,13 +23,14 @@ carsRoutes.post(
   ensureAdmin, 
   createCarController.handle
   )
+  
 carsRoutes.get("/available", listAvailableCarsController.handle)
 
 carsRoutes.post(
   "/specifications/:id",
   ensureAuthenticated,
   ensureAdmin,
-  createCarSpecificationControler.handle
+  createCarSpecificationController.handle
   )
 
 carsRoutes.post(

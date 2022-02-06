@@ -24,7 +24,7 @@ class CarsRepositoryInMemory implements ICarsRepository{
         if(
           car.available === true || 
           ((brand && car.brand === brand) || 
-          (category_id && car.category.id === category_id) || 
+          (category_id && car.category_id === category_id) || 
           (name && car.name === name))){
           return car
         }
@@ -34,7 +34,7 @@ class CarsRepositoryInMemory implements ICarsRepository{
 
   async create({
     brand,
-    category,
+    category_id,
     daily_rate,
     description,
     fine_amount,
@@ -45,7 +45,7 @@ class CarsRepositoryInMemory implements ICarsRepository{
     const car = new Car()
     Object.assign(car, {
       brand,
-      category,
+      category_id,
       daily_rate,
       description,
       fine_amount,

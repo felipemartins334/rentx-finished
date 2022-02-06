@@ -27,7 +27,8 @@ export class CreateRentalsTable1643978717861 implements MigrationInterface {
                     },
                     {
                         name: "end_date",
-                        type: "timestamp"
+                        type: "timestamp",
+                        isNullable: true
                     },
                     {
                         name: "expected_return_date",
@@ -35,7 +36,8 @@ export class CreateRentalsTable1643978717861 implements MigrationInterface {
                     },
                     {
                         name: "total",
-                        type: "numeric"
+                        type: "numeric",
+                        isNullable: true
                     },
                     {
                         name: "created_at",
@@ -55,7 +57,7 @@ export class CreateRentalsTable1643978717861 implements MigrationInterface {
                         columnNames: ["car_id"],
                         referencedTableName: "cars",
                         referencedColumnNames: ["id"],
-                        onDelete: "SET NULL",
+                        onDelete: "CASCADE",
                         onUpdate: "SET NULL"
                     },
                     {
@@ -63,7 +65,7 @@ export class CreateRentalsTable1643978717861 implements MigrationInterface {
                         columnNames: ["user_id"],
                         referencedTableName: "users",
                         referencedColumnNames: ["id"],
-                        onDelete: "SET NULL",
+                        onDelete: "CASCADE",
                         onUpdate: "SET NULL"
                     }
                 ]
