@@ -41,13 +41,7 @@ class Car{
   @Column()
   category_id: string
 
-  @ManyToOne(() => Category, {
-    eager: true
-  })
-  @JoinColumn({
-    name: "category_id"
-  })
-  category: Category
+  
 
   @CreateDateColumn()
   created_at: Date
