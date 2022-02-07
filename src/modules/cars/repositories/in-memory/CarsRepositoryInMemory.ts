@@ -24,7 +24,7 @@ class CarsRepositoryInMemory implements ICarsRepository{
         if(
           car.available === true || 
           ((brand && car.brand === brand) || 
-          (category_id && car.category_id === category_id) || 
+          (category_id && car.category.id === category_id) || 
           (name && car.name === name))){
           return car
         }
