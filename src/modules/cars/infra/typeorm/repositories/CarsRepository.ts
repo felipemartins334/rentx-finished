@@ -22,7 +22,6 @@ class CarsRepository implements ICarsRepository{
     specifications,
     id
   }: ICreateCarDTO): Promise<Car> {
-    console.log(category_id)
     const car = this.repository.create({
       name,
       brand, 

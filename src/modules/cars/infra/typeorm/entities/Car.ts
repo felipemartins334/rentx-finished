@@ -30,7 +30,7 @@ class Car{
   @Column()
   available: boolean
 
-  @ManyToMany(() => Specification)
+  @ManyToMany(() => Specification, { eager: true })
   @JoinTable({
     name: "specifications_cars",
     joinColumns: [{ name: "car_id"}],

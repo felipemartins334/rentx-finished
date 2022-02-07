@@ -41,7 +41,6 @@ class CreateRentalUseCase{
       )
 
     if(compare < minimumHours){
-      console.log(compare)
       throw new AppError("Invalid return time")
     }
 
