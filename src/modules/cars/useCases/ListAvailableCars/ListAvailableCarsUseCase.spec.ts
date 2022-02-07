@@ -15,9 +15,7 @@ let listAvailableCars: ListAvailableCarsUseCase
   it("should be able to list all available cars", async () => {
     const car = await carsRepositoryInMemory.create({
       brand: "Car_brand",
-      category: {
-        id:"category_id"
-      },
+      category_id: "123",
       daily_rate: 140,
       description: "carro bonito",
       fine_amount: 100,
@@ -32,9 +30,7 @@ let listAvailableCars: ListAvailableCarsUseCase
   it("should be able to list all available cars by brand", async () => {
     const car = await carsRepositoryInMemory.create({
       brand: "Car_brand",
-      category: {
-        id:"category_id"
-      },
+      category_id: "123",
       daily_rate: 140,
       description: "carro bonito",
       fine_amount: 100,
@@ -51,9 +47,7 @@ let listAvailableCars: ListAvailableCarsUseCase
   it("should be able to list all available cars by name", async () => {
     const car = await carsRepositoryInMemory.create({
       brand: "Car_brand",
-      category: {
-        id:"category_id"
-      },
+      category_id: "123",
       daily_rate: 140,
       description: "carro bonito",
       fine_amount: 100,
@@ -70,9 +64,7 @@ let listAvailableCars: ListAvailableCarsUseCase
   it("should be able to list all available cars by category", async () => {
     const car = await carsRepositoryInMemory.create({
       brand: "Car_brand",
-      category: {
-        id:"category_id"
-      },
+      category_id: "123",
       daily_rate: 140,
       description: "carro bonito",
       fine_amount: 100,

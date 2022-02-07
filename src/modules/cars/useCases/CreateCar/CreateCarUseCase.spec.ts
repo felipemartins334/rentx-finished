@@ -17,9 +17,7 @@ describe("Create a new car", () => {
     const car = await createCarUseCase.execute({
       name: "Palio",
       brand: "Toyota",
-      category: {
-        id: "123"
-      },
+      category_id: "123",
       daily_rate: 100,
       description: "Carro bonito",
       fine_amount: 40,
@@ -34,9 +32,7 @@ describe("Create a new car", () => {
       const car0 = await createCarUseCase.execute({
         name: "Palio",
         brand: "Toyota",
-        category: {
-          id: "123"
-        },
+        category_id: "123",
         daily_rate: 100,
         description: "Carro bonito",
         fine_amount: 40,
@@ -45,9 +41,7 @@ describe("Create a new car", () => {
       const car1 = await createCarUseCase.execute({
         name: "Palio",
         brand: "Toyota",
-        category: {
-          id:"123"
-        },
+        category_id: "123",
         daily_rate: 100,
         description: "Carro bonito",
         fine_amount: 40,
@@ -60,9 +54,7 @@ describe("Create a new car", () => {
     const car = await createCarUseCase.execute({
       name: "Palio",
       brand: "Toyota",
-      category:{
-        id: "123"
-      },
+      category_id: "123",
       daily_rate: 100,
       description: "Carro bonito",
       fine_amount: 40,

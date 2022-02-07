@@ -23,9 +23,7 @@ describe("Create Car Specification", () => {
     const car = await carsRepositoryInMemory.create({
       name: "Palio",
       brand: "Toyota",
-      category: {
-        id: "123"
-      },
+      category_id: "123",
       daily_rate: 100,
       description: "Carro bonito",
       fine_amount: 40,
