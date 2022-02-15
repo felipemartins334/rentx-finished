@@ -30,17 +30,22 @@ class Car{
   @Column()
   available: boolean
 
-  @ManyToMany(() => Specification, { eager: true })
+  @ManyToMany(() => Specification)
   @JoinTable({
     name: "specifications_cars",
-    joinColumns: [{ name: "car_id"}],
-    inverseJoinColumns: [{ name: "specification_id"}]
+    joinColumn:{
+      name: "car_id",
+    },
+    inverseJoinColumn: {
+      name: "specification_id"
+    }
+    
   })
   specifications: Specification[]
 
   @ManyToOne(() => Category, { eager: true } )
   @JoinColumn({
-    name: "category_id"
+    name: "category_id",
   })
   category: Category
 

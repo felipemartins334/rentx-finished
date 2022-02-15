@@ -1,10 +1,14 @@
 import "reflect-metadata"
 import "../../container"
-import '../typeorm'
+import createConnection from '../typeorm'
 import express, { NextFunction, Request, Response } from 'express'
 import "express-async-errors"
 import { AppError } from '../../errors/AppError'
 import { routes} from './routes'
+
+(async () => {
+  const connection = await createConnection()
+})()
 
 const app = express()
 
