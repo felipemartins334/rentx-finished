@@ -36,7 +36,6 @@ class CreateCarSpecificationUseCase{
     
     carExists.specifications = specifications
 
-    console.log(carExists)
     await this.carsRepository.create({
       ...carExists,
       category_id: carExists.category.id
