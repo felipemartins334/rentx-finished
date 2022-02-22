@@ -5,9 +5,11 @@ import { categoriesRoutes } from "./categories.routes";
 import { specificationsRoutes } from "./specifications.routes";
 import { carsRoutes } from "./cars.routes";
 import { rentalRoutes } from "./rental.routes";
+import { passwordRoutes } from "./password.routes";
 
 const routes = Router()
 
+routes.use("/password", passwordRoutes)
 routes.use("/users", userRoutes)
 routes.use("/categories", categoriesRoutes)
 routes.use("/sessions", authenticationRoutes)
