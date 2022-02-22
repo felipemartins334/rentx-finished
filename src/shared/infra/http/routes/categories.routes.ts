@@ -9,7 +9,7 @@ import { ensureAdmin } from "../middlewares/EnsureAdmin";
 
 const categoriesRoutes = Router()
 
-const uploadFile = multer(upload.upload("./tmp"))
+const uploadFile = multer(upload)
 
 const createCategoryController = new CreateCategoryController()
 const listCategoriesController = new ListCategoriesController()
@@ -21,7 +21,9 @@ categoriesRoutes.post(
   ensureAdmin, 
   createCategoryController.handle
   )
+
 categoriesRoutes.get("/", ensureAuthenticated, listCategoriesController.handle)
+
 categoriesRoutes.post(
   "/import",
   ensureAuthenticated,
