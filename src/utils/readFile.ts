@@ -1,6 +1,5 @@
 import fs from 'fs'
 import { parse } from 'csv-parse'
-import { deleteFile } from './deleteFile'
 
 export default {
   readFile<T>(path: string, delimiter: string): Promise<T[]> {

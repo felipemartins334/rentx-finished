@@ -6,6 +6,7 @@ import express, { NextFunction, Request, Response } from 'express'
 import "express-async-errors"
 import { AppError } from '../../errors/AppError'
 import { routes} from './routes'
+import upload from "../../../config/upload"
 
 (async () => {
   const connection = await createConnection()
@@ -14,6 +15,9 @@ import { routes} from './routes'
 const app = express()
 
 app.use(express.json())
+
+app.use("/avatar", express.static(`${upload.tmpFolder}/avatar`))
+app.use("/cars", express.static(`${upload.tmpFolder}/cars`))
 
 app.use(routes)
 

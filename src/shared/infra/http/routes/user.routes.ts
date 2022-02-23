@@ -18,8 +18,9 @@ userRoutes.post("/", createUserController.handle)
 
 userRoutes.patch(
   "/avatar", 
+  ensureAuthenticated,
   uploadAvatar.single("avatar"), 
-  ensureAuthenticated,uploadAvatarController.handle
+  uploadAvatarController.handle
   )
 
 userRoutes.get(

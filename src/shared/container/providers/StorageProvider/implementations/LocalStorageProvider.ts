@@ -10,7 +10,6 @@ class LocalStorageProvider implements IStorageProvider{
       resolve(`${upload.tmpFolder}/${folder}`, file)
     )
     const filePath = (resolve(upload.tmpFolder, file))
-    console.log(filePath)
 
     return file
   }

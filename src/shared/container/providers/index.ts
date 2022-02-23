@@ -3,6 +3,7 @@ import {  IDateProvider } from './DateProvider/IDateProvider'
 import { DayJsDateProvider } from './DateProvider/implementations/DayjsDateProvider'
 import { IMailProvider } from './MailProvider/IMailProvider'
 import { EtherealMailProvider } from './MailProvider/implementations/EtherealMailProvider'
+import { FTPStorageProvider } from './StorageProvider/implementations/FTPStorageProvider'
 import { LocalStorageProvider } from './StorageProvider/implementations/LocalStorageProvider'
 import { S3StorageProvider } from './StorageProvider/implementations/S3StorageProvider'
 import { IStorageProvider } from './StorageProvider/IStorageProvider'
@@ -19,7 +20,8 @@ container.registerInstance<IMailProvider>(
 
 const diskStorage = {
   local: LocalStorageProvider,
-  s3: S3StorageProvider
+  s3: S3StorageProvider,
+  ftp: FTPStorageProvider
 }
 
 container.registerSingleton<IStorageProvider>(

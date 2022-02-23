@@ -12,7 +12,9 @@
   "dependencies": {
     "@types/bcrypt": "^5.0.0",
     "aws-sdk": "^2.1078.0",
+    "basic-ftp": "^4.6.6",
     "bcrypt": "^5.0.1",
+    "class-transformer": "^0.5.1",
     "csv-parse": "^5.0.4",
     "dayjs": "^1.10.7",
     "dotenv": "^16.0.0",
