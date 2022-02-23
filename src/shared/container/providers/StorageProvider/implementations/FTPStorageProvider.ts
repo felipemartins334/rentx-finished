@@ -9,10 +9,10 @@ class FTPStorageProvider implements IStorageProvider{
   async getConnection(): Promise<Client>{
     const client = new Client()
     await client.access({
-      host: "192.168.1.4",
-      user: "admin",
-      password: "12345",
-      port: 2121,
+      host: process.env.FTP_HOST,
+      user: process.env.FTP_USER,
+      password: process.env.FTP_PASSWORD,
+      port: Number(process.env.FTP_PORT),
       secure: false
     })
 
