@@ -7,6 +7,7 @@ import "express-async-errors"
 import { AppError } from '../../errors/AppError'
 import { routes} from './routes'
 import upload from "../../../config/upload"
+import cors from 'cors'
 
 (async () => {
   const connection = await createConnection()
@@ -19,6 +20,7 @@ app.use(express.json())
 app.use("/avatar", express.static(`${upload.tmpFolder}/avatar`))
 app.use("/cars", express.static(`${upload.tmpFolder}/cars`))
 
+app.listen(cors())
 app.use(routes)
 
 app.use((error: Error, request: Request, response: Response, next: NextFunction) => {

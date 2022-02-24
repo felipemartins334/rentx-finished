@@ -2,5 +2,5 @@
 /.vscode
 /tmp
 .env
-coverage
+/coverage
 dist
